@@ -7,15 +7,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
         tex2jax: {
+          // Inline math is wrapped in single dollar signs
           inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+          // Block math is wrapped in double dollar signs
           displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
           processEscapes: true
         },
+        // Optional: Prevents "Loading" message at the bottom
         messageStyle: "none", 
         "HTML-CSS": { availableFonts: ["TeX"] }
       });
@@ -30,11 +33,13 @@
 <body>
 
     <header class="site-header">
-        <div class="wrapper header-wrapper">
+        <div class="wrapper header-content">
             <a class="site-title" href="{{ "/" | relative_url }}">Egor Malitskiy</a>
             <nav class="site-nav">
-                <a href="{{ "/" | relative_url }}">Blog</a>
-                <a href="#">About</a> <a href="#">CV</a>    </nav>
+                <a href="{{ "/" | relative_url }}">Home</a>
+                <a href="#">About</a>
+                <a href="#">Research</a> 
+            </nav>
         </div>
     </header>
 
@@ -46,7 +51,7 @@
 
     <footer class="site-footer">
         <div class="wrapper">
-            <p>&copy; {{ "now" | date: "%Y" }} Egor Malitskiy &bull; <a href="https://github.com/egormalitskiy">GitHub</a></p>
+            <p>&copy; {{ "now" | date: "%Y" }} Egor Malitskiy. Built with Jekyll.</p>
         </div>
     </footer>
 

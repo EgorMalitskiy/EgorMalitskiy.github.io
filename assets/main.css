@@ -1,165 +1,149 @@
-/* Base Variables - Replicating the minimal academic palette */
+/* --- Variables & Reset --- */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #2a2a2a;
-    --accent-color: #222;       /* Dark, almost black for headers */
-    --link-color: #000;         /* Ludwig uses black links that underline on hover */
-    --meta-color: #888;
-    --wrapper-width: 700px;     /* Narrow column for readability */
-    --font-body: 'Merriweather', serif;
-    --font-heading: 'Open Sans', sans-serif;
+    --bg-color: #fcfcfc;       /* Very slight off-white for warmth */
+    --text-color: #2c2c2c;     /* Softer than pure black */
+    --accent-color: #0056b3;   /* Academic blue for links */
+    --header-font: 'Montserrat', sans-serif;
+    --body-font: 'Lora', serif;
+    --max-width: 740px;        /* Optimal reading width */
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: var(--font-body);
-    font-size: 18px;
-    line-height: 1.75;
+    font-family: var(--body-font);
+    font-size: 19px;           /* Large, readable text */
+    line-height: 1.8;          /* Generous line height */
     margin: 0;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Layout */
+/* --- Layout --- */
 .wrapper {
-    max-width: var(--wrapper-width);
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header - Clean horizontal row */
+/* --- Header --- */
 .site-header {
-    padding: 40px 0 60px 0;
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    padding: 20px 0;
+    margin-bottom: 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02); /* Subtle depth */
 }
 
-.header-wrapper {
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .site-title {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.4em;
+    font-family: var(--header-font);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #000;
-    text-decoration: none;
 }
 
 .site-nav a {
-    font-family: var(--font-heading);
-    font-size: 0.9em;
-    font-weight: 600;
+    font-family: var(--header-font);
+    font-size: 0.9rem;
     color: #666;
     margin-left: 20px;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
 .site-nav a:hover {
-    color: #000;
-}
-
-/* Typography */
-h1, h2, h3 {
-    font-family: var(--font-heading);
     color: var(--accent-color);
-    font-weight: 700;
-    margin-top: 1.5em;
 }
 
-h1 { font-size: 2.2em; line-height: 1.2; }
-h2 { font-size: 1.6em; }
+/* --- Typography (The "Invitable" Look) --- */
+h1, h2, h3 {
+    font-family: var(--header-font);
+    color: #111;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.2em; font-weight: 700; letter-spacing: -0.5px; }
+h2 { font-size: 1.6em; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+h3 { font-size: 1.3em; }
 
 a {
-    color: var(--link-color);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-    transition: all 0.2s;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover { text-decoration: underline; }
+
+/* --- Homepage specific --- */
+.intro-section {
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
 }
 
-a:hover {
-    color: #444;
-    text-decoration-thickness: 2px;
-}
-
-/* Post List (The distinctive Ludwig look) */
 .post-list {
     list-style: none;
     padding: 0;
-    margin-top: 40px;
 }
 
 .post-item {
-    margin-bottom: 60px; /* Lots of breathing room between posts */
+    margin-bottom: 50px;
 }
 
 .post-meta {
-    font-family: var(--font-heading);
-    font-size: 0.85em;
-    color: var(--meta-color);
+    font-family: var(--header-font);
+    font-size: 0.85rem;
+    color: #888;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .post-link {
-    font-family: var(--font-heading);
-    font-size: 1.6em;
-    font-weight: 800;
-    color: #000;
-    text-decoration: none;
-    line-height: 1.2;
+    font-family: var(--header-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .post-link:hover {
+    color: var(--accent-color);
     text-decoration: none;
-    color: #333;
 }
 
 .post-excerpt {
+    color: #555;
     font-size: 1rem;
-    color: #444;
-    margin-bottom: 15px;
 }
 
-/* The "Full Story" Link Style */
-.read-more {
-    font-family: var(--font-heading);
-    font-size: 0.9em;
-    font-weight: 700;
-    color: #000;
-    text-decoration: none;
-    border-bottom: 2px solid #000;
-    padding-bottom: 2px;
-}
-
-.read-more:hover {
-    background: #000;
-    color: #fff;
-    text-decoration: none;
-}
-
-/* MathJax Scroll Fix */
+/* --- Math & Code --- */
+/* Makes math blocks scroll on mobile if they are too wide */
 .MathJax_Display {
     overflow-x: auto;
     overflow-y: hidden;
+    padding: 15px 0;
+    color: #444;
 }
 
-/* Footer */
+/* --- Footer --- */
 .site-footer {
-    border-top: 1px solid #eee;
-    margin-top: 80px;
+    margin-top: 100px;
     padding: 40px 0;
-    font-family: var(--font-heading);
-    font-size: 0.8em;
-    color: #999;
+    border-top: 1px solid #eee;
     text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+    font-family: var(--header-font);
 }
