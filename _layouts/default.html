@@ -2,21 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
-          tex2jax: {
-            // Inline math is wrapped in single dollar signs
-            inlineMath: [ ['$','$'], ['\\(','\\)'] ],
-            // Block math is wrapped in double dollar signs
-            displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
-            processEscapes: true
-          },
-          // Optional: Prevents "Loading" message at the bottom
-          messageStyle: "none", 
-          "HTML-CSS": { availableFonts: ["TeX"] }
-        });
+        tex2jax: {
+          // Inline math is wrapped in single dollar signs
+          inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+          // Block math is wrapped in double dollar signs
+          displayMath: [ ['$$','$$'], ['\\[','\\]'] ],
+          processEscapes: true
+        },
+        // Optional: Prevents "Loading" message at the bottom
+        messageStyle: "none", 
+        "HTML-CSS": { availableFonts: ["TeX"] }
+      });
     </script>
     <script type="text/javascript" async
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -24,10 +29,24 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-    </head>
+</head>
 <body>
-    <main>
-        {{ content }} 
+    <header class="site-header">
+        <div class="wrapper">
+            <a class="site-title" href="{{ "/" | relative_url }}">Egor's Math Blog</a>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="wrapper">
+            {{ content }} 
+        </div>
     </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; {{ "now" | date: "%Y" }} Egor Malitskiy</p>
+        </div>
+    </footer>
 </body>
 </html>
