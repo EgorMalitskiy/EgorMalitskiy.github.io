@@ -12,12 +12,16 @@ The path of a light ray, the shape of a soap film—nature often seeks to minimi
 ### Inline Math Example
 
 The action integral $S$ is defined as:
+{% raw %}
 $$S = \int_{t_1}^{t_2} L(q, \dot{q}, t) \, dt$$
+{% endraw %}
 where $L$ is the **Lagrangian**, $q$ is the generalized coordinate, and $\dot{q}$ is its time derivative.
 
 The Euler-Lagrange equation is the result of minimizing the action ($\delta S = 0$), and it is written as:
 
+{% raw %}
 $$\frac{d}{dt} \left( \frac{\partial L}{\partial \dot{q}} \right) - \frac{\partial L}{\partial q} = 0$$
+{% endraw %}
 
 ### What's Next?
 
