@@ -1,26 +1,22 @@
 ---
 layout: default
-title: "My Mathematical Blog"
+title: "Egor Malitskiy"
 ---
-
-# Recent Posts
 
 <ul class="post-list">
   {% for post in site.posts %}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <li class="post-item">
+      <span class="post-meta">{{ post.date | date: "%B %d, %Y" }}</span>
 
-      <h2>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h2>
+      <a class="post-link" href="{{ post.url | relative_url }}">
+        {{ post.title | escape }}
+      </a>
 
-      {{ post.excerpt }} 
+      <div class="post-excerpt">
+        {{ post.excerpt }}
+      </div>
 
-      <p>
-        <a href="{{ post.url | relative_url }}">Continue reading...</a>
-      </p>
+      <a href="{{ post.url | relative_url }}" class="read-more">Full Story</a>
     </li>
   {% endfor %}
 </ul>

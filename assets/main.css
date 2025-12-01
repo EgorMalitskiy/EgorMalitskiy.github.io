@@ -1,106 +1,165 @@
-/* Base Variables */
+/* Base Variables - Replicating the minimal academic palette */
 :root {
-    --bg-color: #fafafa;
-    --text-color: #333;
-    --accent-color: #2c3e50;
-    --link-color: #007bff;
-    --wrapper-width: 740px; /* Optimal reading width */
+    --bg-color: #ffffff;
+    --text-color: #2a2a2a;
+    --accent-color: #222;       /* Dark, almost black for headers */
+    --link-color: #000;         /* Ludwig uses black links that underline on hover */
+    --meta-color: #888;
+    --wrapper-width: 700px;     /* Narrow column for readability */
+    --font-body: 'Merriweather', serif;
+    --font-heading: 'Open Sans', sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Lora', serif; /* Serif is great for long-form reading */
+    font-family: var(--font-body);
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.75;
     margin: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Layout Wrapper */
+/* Layout */
 .wrapper {
     max-width: var(--wrapper-width);
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--accent-color);
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-    font-weight: 700;
-}
-
-h1 { font-size: 2.5em; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
-h2 { font-size: 1.8em; }
-
-a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-}
-
-/* Header & Footer */
+/* Header - Clean horizontal row */
 .site-header {
-    background: #fff;
-    border-bottom: 1px solid #eaeaea;
-    padding: 20px 0;
-    margin-bottom: 40px;
+    padding: 40px 0 60px 0;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .site-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 1.5em;
-    color: var(--text-color);
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    text-decoration: none;
 }
 
-.site-footer {
-    border-top: 1px solid #eaeaea;
-    margin-top: 60px;
-    padding: 30px 0;
-    text-align: center;
+.site-nav a {
+    font-family: var(--font-heading);
     font-size: 0.9em;
-    color: #777;
+    font-weight: 600;
+    color: #666;
+    margin-left: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* Post List Styling (for the homepage) */
+.site-nav a:hover {
+    color: #000;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-top: 1.5em;
+}
+
+h1 { font-size: 2.2em; line-height: 1.2; }
+h2 { font-size: 1.6em; }
+
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: all 0.2s;
+}
+
+a:hover {
+    color: #444;
+    text-decoration-thickness: 2px;
+}
+
+/* Post List (The distinctive Ludwig look) */
 .post-list {
     list-style: none;
     padding: 0;
+    margin-top: 40px;
 }
 
-.post-list li {
-    margin-bottom: 40px;
+.post-item {
+    margin-bottom: 60px; /* Lots of breathing room between posts */
 }
 
 .post-meta {
-    font-size: 0.9em;
-    color: #828282;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
+    font-size: 0.85em;
+    color: var(--meta-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 8px;
 }
 
-/* MathJax Tweaks */
+.post-link {
+    font-family: var(--font-heading);
+    font-size: 1.6em;
+    font-weight: 800;
+    color: #000;
+    text-decoration: none;
+    line-height: 1.2;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.post-link:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+.post-excerpt {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* The "Full Story" Link Style */
+.read-more {
+    font-family: var(--font-heading);
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid #000;
+    padding-bottom: 2px;
+}
+
+.read-more:hover {
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* MathJax Scroll Fix */
 .MathJax_Display {
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 10px 0;
 }
 
-/* Blockquotes for definitions/theorems */
-blockquote {
-    border-left: 4px solid var(--accent-color);
-    margin: 20px 0;
-    padding-left: 20px;
-    font-style: italic;
-    color: #555;
-    background: #f4f4f4;
-    padding: 10px 20px;
-    border-radius: 4px;
+/* Footer */
+.site-footer {
+    border-top: 1px solid #eee;
+    margin-top: 80px;
+    padding: 40px 0;
+    font-family: var(--font-heading);
+    font-size: 0.8em;
+    color: #999;
+    text-align: center;
 }
