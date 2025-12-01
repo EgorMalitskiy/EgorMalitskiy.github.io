@@ -1,5 +1,9 @@
 # remote_theme: jekyll/minima
 
+title: Egor Malitskiy
+url: "https://egormalitskiy.github.io"
+baseurl: ""
+
 markdown: kramdown
 kramdown:
   math_engine: mathjax
